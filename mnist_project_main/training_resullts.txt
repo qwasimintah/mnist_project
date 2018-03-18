@@ -1,3 +1,45 @@
+Perceptron Model
+
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 784)               615440    
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                7850      
+=================================================================
+Total params: 623,290
+Trainable params: 623,290
+Non-trainable params: 0
+_________________________________________________________________
+Train on 60000 samples, validate on 10000 samples
+Epoch 1/10
+2018-03-18 00:26:21.462225: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2
+ - 12s - loss: 0.2829 - acc: 0.9198 - val_loss: 0.1401 - val_acc: 0.9613
+Epoch 2/10
+ - 12s - loss: 0.1127 - acc: 0.9681 - val_loss: 0.0978 - val_acc: 0.9707
+Epoch 3/10
+ - 12s - loss: 0.0724 - acc: 0.9785 - val_loss: 0.0795 - val_acc: 0.9752
+Epoch 4/10
+ - 12s - loss: 0.0529 - acc: 0.9842 - val_loss: 0.0707 - val_acc: 0.9784
+Epoch 5/10
+ - 12s - loss: 0.0373 - acc: 0.9895 - val_loss: 0.0627 - val_acc: 0.9793
+Epoch 6/10
+ - 12s - loss: 0.0274 - acc: 0.9925 - val_loss: 0.0609 - val_acc: 0.9810
+Epoch 7/10
+ - 12s - loss: 0.0199 - acc: 0.9950 - val_loss: 0.0631 - val_acc: 0.9797
+Epoch 8/10
+ - 12s - loss: 0.0160 - acc: 0.9959 - val_loss: 0.0635 - val_acc: 0.9802
+Epoch 9/10
+ - 12s - loss: 0.0115 - acc: 0.9977 - val_loss: 0.0600 - val_acc: 0.9816
+Epoch 10/10
+ - 12s - loss: 0.0093 - acc: 0.9982 - val_loss: 0.0595 - val_acc: 0.9821
+Baseline Error: 1.79%
+dict_keys(['loss', 'acc', 'val_acc', 'val_loss'])
+[INFO] test score - 0.05947575617241964
+[INFO] test accuracy - 0.9821
+
+
+
+Convolutional Final Model
 
 Epoch 1/20
  - 46s - loss: 0.8043 - acc: 0.7428 - val_loss: 0.0738 - val_acc: 0.9800
