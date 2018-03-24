@@ -1,0 +1,41 @@
+
+
+######### Optimizers #############
+
+Adam, SGD, RMSprop
+
+
+######### Learning rate ###########
+
+*Fixed values : 0.01, 0.001, 0.002, 0.02
+*Adaptive values for all the optimizers . All ready using it for Adam optimizer in the file deep_convo
+
+######### Activation Functions #########
+*sigmoid
+*relu
+*tanh
+*softmax (for the final full layer)
+*selu
+
+
+############# Loss Functions ##############
+categorical_crossentropy
+mean squared error
+hinge loss
+
+############## Tuning Other hyper parameters #########
+Momentum try from 0.5 to 0.9 (on SGD optimizer)
+Number of epochs (now set to 500, vary it)
+Batch size (currently set to 16, try 32,64,128)
+
+
+############# Additional Dataset ############## 
+To do if we have time (EMNIST)
+
+########### Other architecutres ##############
+Convolutional 2d 
+Perceptron
+
+
+
+

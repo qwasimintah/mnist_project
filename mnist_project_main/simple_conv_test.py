@@ -46,8 +46,9 @@ mTrainLabels = np_utils.to_categorical(trainLabels, num_classes)
 mTestLabels = np_utils.to_categorical(testLabels, num_classes)
 
 # grab some test images from the test data
-test_images = testData[1:5]
-org_image = testData[1:5]
+test_images = testData[10:14]
+size = len(test_images)
+org_image = testData[10:14]
 org_image = org_image.reshape(org_image.shape[0],28, 28)
 # reshape the test images to standard 28x28 format
 test_images = test_images.reshape(test_images.shape[0], 1, 28, 28)
@@ -55,7 +56,7 @@ print("[INFO] test images shape - {}".format(test_images.shape))
 
 model = load_model('simple_conv')
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
+axes =[0]*size
 # loop over each of the test images
 for i, test_image in enumerate(test_images, start=1):
 	# grab a copy of test image for viewing
@@ -70,7 +71,13 @@ for i, test_image in enumerate(test_images, start=1):
 	
 	# display the prediction and image
 	print("[INFO] I think the digit is - {}".format(prediction[0]))
-	plt.subplot(220+i)
+	axes[i-1]=plt.subplot(220+i)
+
 	plt.imshow(org_image[i-1], cmap=plt.get_cmap('gray'))
+
+	axes[i-1].text(0.5,-0.1, str(prediction[0]), size=12, ha="center", 
+         transform=axes[i-1].transAxes, color='blue')
+
+	#axes[i-1].set_xlabel(prediction[0])
 
 plt.show()

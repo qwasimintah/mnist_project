@@ -38,6 +38,56 @@ dict_keys(['loss', 'acc', 'val_acc', 'val_loss'])
 [INFO] test accuracy - 0.9821
 
 
+Simple Convolutional Model
+
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 32, 24, 24)        832       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 32, 12, 12)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 32, 12, 12)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 4608)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 128)               589952    
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                1290      
+=================================================================
+Total params: 592,074
+Trainable params: 592,074
+Non-trainable params: 0
+_________________________________________________________________
+Train on 60000 samples, validate on 10000 samples
+Epoch 1/10
+ - 184s - loss: 0.2425 - acc: 0.9289 - val_loss: 0.0865 - val_acc: 0.9733
+Epoch 2/10
+ - 184s - loss: 0.0746 - acc: 0.9778 - val_loss: 0.0525 - val_acc: 0.9832
+Epoch 3/10
+ - 183s - loss: 0.0530 - acc: 0.9834 - val_loss: 0.0400 - val_acc: 0.9860
+Epoch 4/10
+ - 183s - loss: 0.0400 - acc: 0.9878 - val_loss: 0.0376 - val_acc: 0.9870
+Epoch 5/10
+ - 184s - loss: 0.0328 - acc: 0.9896 - val_loss: 0.0356 - val_acc: 0.9872
+Epoch 6/10
+ - 183s - loss: 0.0265 - acc: 0.9913 - val_loss: 0.0306 - val_acc: 0.9883
+Epoch 7/10
+ - 183s - loss: 0.0217 - acc: 0.9928 - val_loss: 0.0362 - val_acc: 0.9881
+Epoch 8/10
+ - 187s - loss: 0.0184 - acc: 0.9939 - val_loss: 0.0353 - val_acc: 0.9885
+Epoch 9/10
+ - 184s - loss: 0.0151 - acc: 0.9953 - val_loss: 0.0338 - val_acc: 0.9893
+Epoch 10/10
+ - 184s - loss: 0.0143 - acc: 0.9953 - val_loss: 0.0362 - val_acc: 0.9887
+Baseline Error: 1.13%
+dict_keys(['val_acc', 'loss', 'acc', 'val_loss'])
+[INFO] test score - 0.03624036314816767
+[INFO] test accuracy - 0.9887
+
+
+
+
+
 
 Convolutional Final Model
 
