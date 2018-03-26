@@ -4,6 +4,7 @@
 
 Adam, SGD, RMSprop
 
+[x] Done
 
 ######### Learning rate ###########
 
@@ -23,9 +24,11 @@ categorical_crossentropy
 mean squared error
 hinge loss
 
+
 ############## Tuning Other hyper parameters #########
 Momentum try from 0.5 to 0.9 (on SGD optimizer)
-Number of epochs (now set to 500, vary it)
+Number of epochs (now set to 20, vary it)
+Steps in epochs(now set to 500, vary it)
 Batch size (currently set to 16, try 32,64,128)
 
 
@@ -35,6 +38,9 @@ To do if we have time (EMNIST)
 ########### Other architecutres ##############
 Convolutional 2d 
 Perceptron
+
+################ Something wow ###############
+Use graph search to learn hyperparameters intead of manually set them :: TODO IF THERE IS TIME
 
 
 
