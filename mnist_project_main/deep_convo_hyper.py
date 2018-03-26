@@ -7,7 +7,7 @@ from keras.datasets import mnist
 from keras.utils.np_utils import to_categorical # convert to one-hot-encoding
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D, BatchNormalization
-from keras import optimizers
+from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import LearningRateScheduler
 from util import save_model
@@ -65,15 +65,10 @@ model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
 
 datagen = ImageDataGenerator(zoom_range = 0.1, height_shift_range = 0.1, width_shift_range= 0.1,rotation_range = 10)
-#sgd = optimizers.SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-#rmsprop = optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0)
-adam = keras.optimizers.Adam(lr=1e-4)
-#model.compile(loss='categorical_crossentropy', optimizer = rmsprop, metrics=["accuracy"])
-model.compile(loss='mean_squared_error', optimizer = adam, metrics=["accuracy"])
-
+model.compile(loss='categorical_crossentropy', optimizer = Adam(lr=1e-4), metrics=["accuracy"])
 annealer = LearningRateScheduler(lambda x: 1e-3 * 0.9 ** x)
 
-history = model.fit_generator(datagen.flow(x_train, y_train, batch_size=16),
+history = model.fit_generator(datagen.flow(x_train, y_train, batch_size=64),
                            steps_per_epoch=500,
                            epochs=20, #Increase this when not on Kaggle kernel
                            verbose=2,  #1 for ETA, 0 for silent
@@ -110,5 +105,4 @@ print("[INFO] test score - {}".format(final_loss))
 print("[INFO] test accuracy - {}".format(final_acc))
 
 # saving model
-save_model("deep_convo_with_rmsprop", model)
-
+save_model("deep_convo_batch64", model)
