@@ -496,7 +496,7 @@ Epoch 14/20
  - 75s - loss: 0.0693 - acc: 0.9788 - val_loss: 0.0119 - val_acc: 0.9950
 Epoch 15/20
  - 76s - loss: 0.0707 - acc: 0.9807 - val_loss: 0.0107 - val_acc: 0.9950
-Epoch 16/20
+Epoch 16/20`
  - 75s - loss: 0.0625 - acc: 0.9819 - val_loss: 0.0114 - val_acc: 0.9975
 Epoch 17/20
  - 75s - loss: 0.0606 - acc: 0.9832 - val_loss: 0.0066 - val_acc: 1.0000
